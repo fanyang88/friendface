@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources>
+  </data-sources>
+  <form-beans>
+   <form-bean name="loginForm" type="form.LoginForm"/> 
+   <form-bean name="friendForm" type="form.FriendForm"/> 
+   <form-bean name="requestForm" type="form.RequestForm"/> 
+   <form-bean name="subjectForm" type="form.SubjectForm"/> 
+   <form-bean name="circleForm" type="form.CircleForm"/>
+    <form-bean name="postForm" type="form.PostForm"/>
+    <form-bean name="sIPForm" type="form.SIPForm"/>
+    <form-bean name="managerForm" type="form.ManagerForm"/>
+    <form-bean name="adForm" type="form.AdForm"/>
+    
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  
+  <forward name="log"  path="/jsp/content/login/login.jsp"/>
+  <forward name="adlog"  path="/jsp/content/ad/adlogin.jsp"/>
+  
+  </global-forwards>
+  <action-mappings>
+  
+   <action path="/purchase" 
+    		type="action.PurchaseAction">
+   		<forward name="ok" path="/jsp/content/purchase.jsp" />
+    </action>
+    
+    <action path="/transaction" 
+    		type="action.TransactionAction">
+   		<forward name="ok" path="/jsp/content/success.jsp" />
+    </action>
+  
+  <action path="/login" 
+            name="loginForm" 
+    		type="action.LoginAction">
+   		<forward name="ok" path="/index.do" />
+   		<forward name="error" path="/jsp/content/login/login.jsp" />
+    </action>
+    
+    <action path="/logout" 
+    		type="action.LogoutAction">
+   		<forward name="ok" path="/jsp/content/login/login.jsp" />
+    </action>
+    
+    <action path="/sugfriendlist" 
+            name="loginForm" 
+    		type="action.friend.SuggestFriendListAction">
+   		<forward name="ok" path="/jsp/content/friend/searchfriend.jsp" />
+    </action>
+    
+    <action path="/index" 
+            name="loginForm" 
+    		type="action.IndexAction">
+   		<forward name="ok" path="/jsp/content/home/index.jsp" />
+    </action>
+    
+    <action path="/saveprofile" 
+            name="loginForm" 
+    		type="action.SaveProfileAction">
+   		<forward name="ok" path="/index.do" />
+    </action>
+
+  <action path="/register" 
+            name="loginForm" 
+    		type="action.RegisterAction">
+   		<forward name="ok" path="/index.do" />
+   		<forward name="error" path="/jsp/content/login/register.jsp" />
+    </action>
+    
+    <action path="/addrequest"
+             name="requestForm" 
+    		type="action.AddRequestAction">
+   		<forward name="ok" path="/sugfriendlist.do" />
+   	 </action>
+   	 
+   	 
+   	  <action path="/addfriend" 
+    		type="action.friend.AddFriendAction">
+   		<forward name="ok" path="/sugfriendlist.do" />
+   	 </action>
+   	 
+   	 <action path="/allfriend" 
+    		type="action.friend.FriendListAction">
+   		<forward name="ok" path="/jsp/content/home/allfriends.jsp" />
+   	 </action>
+   	 
+   <action path="/discussionlist" 
+            name="subjectForm" 
+    		type="action.discussion.DiscussionListAction">
+   		<forward name="ok" path="/jsp/content/message/discussion.jsp" />
+   	 </action>
+   	 
+   	 <action path="/addsubject" 
+            name="subjectForm" 
+    		type="action.discussion.AddSubjectAction">
+   		<forward name="ok" path="/discussionlist.do" />
+   	 </action>
+   	
+    <action path="/messagelist" 
+            name="subjectForm" 
+    		type="action.discussion.MessageListAction">
+   		<forward name="ok" path="/jsp/content/message/messagelist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/addmessage" 
+   	        name="subjectForm"
+    		type="action.discussion.AddMessageAction">
+   		<forward name="ok" path="/jsp/content/message/messagelist.jsp"  />
+   	 </action>
+   	 
+   	 
+   	 <action path="/circlelist" 
+            name="circleForm" 
+    		type="action.circle.CircleListAction">
+   		<forward name="ok" path="/jsp/content/circle/circlelist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/addcircle" 
+   	        name="circleForm"
+    		type="action.circle.CreateCircleAction">
+   		<forward name="ok" path="/jsp/content/circle/circlelist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/deletecircle" 
+    		type="action.circle.DeleteCircleAction">
+   		<forward name="ok" path="/jsp/content/circle/circlelist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/circlefriendlist" 
+   	         name="friendForm"
+    		type="action.circle.ListCircleFriendAction">
+   		<forward name="ok" path="/jsp/content/circle/circlefriendlist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/changecircle" 
+   	         name="friendForm"
+    		type="action.circle.ChangeCircleAction">
+   		<forward name="ok" path="/jsp/content/circle/circlefriendlist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/postlist" 
+   	         name="postForm"
+    		type="action.post.PostListAction">
+   		<forward name="ok" path="/jsp/content/post/postlist.jsp"  />
+   	 </action>
+   	 
+   	    <action path="/addpost" 
+   	         name="postForm"
+    		type="action.post.AddPostAction">
+   		<forward name="ok" path="/postlist.do"  />
+   	 </action>
+   	 
+   	 <action path="/commentlist" 
+   	         name="postForm"
+    		type="action.post.CommentListAction">
+   		<forward name="ok" path="/jsp/content/post/commentlist.jsp"  />
+   	 </action>
+   	 
+   	    <action path="/addcomment" 
+   	         name="postForm"
+    		type="action.post.MakeCommentAction">
+   		<forward name="ok" path="/jsp/content/post/commentlist.jsp"  />
+   	 </action>
+   	 
+   	  <action path="/siplist" 
+   	         name="sIPForm"
+    		type="action.SIP.SIPListAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPlist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/addsip" 
+   	         name="sIPForm"
+    		type="action.SIP.AddSIPAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPlist.jsp" />
+   	 </action>
+   	 
+   	 <action path="/sipdetail" 
+   	         name="sIPForm"
+    		type="action.SIP.SIPDetailAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPdetail.jsp" />
+   	 </action>
+   	 
+   	 <action path="/addSIPpost" 
+   	         name="sIPForm"
+    		type="action.SIP.AddSIPPostAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPdetail.jsp" />
+   	 </action>
+   	 
+   	 <action path="/sipcommentlist" 
+   	         name="sIPForm"
+    		type="action.SIP.SIPCommentListAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPcomment.jsp" />
+   	 </action>
+   	 
+   	 <action path="/addsippcomment" 
+   	         name="sIPForm"
+    		type="action.SIP.AddSIPPCommentAction">
+   		<forward name="ok" path="/jsp/content/SIP/SIPcomment.jsp" />
+   	 </action>
+   	 
+   	  <!--advertisement-->
+   	  
+   	  
+   	 <action path="/adlogin" 
+            name="managerForm" 
+    		type="action.Advertisement.ADloginAction">
+   		<forward name="ok" path="/adindex.do" />
+   		<forward name="error" path="/jsp/content/ad/adlogin.jsp" />
+    </action>
+    
+     <action path="/adlogout" 
+    		type="action.Advertisement.ADLogoutAction">
+   		<forward name="ok" path="/jsp/content/ad/adlogin.jsp" />
+    </action>
+    
+     <action path="/adindex" 
+            name="managerForm" 
+    		type="action.Advertisement.ADIndexAction">
+   		<forward name="ok" path="/jsp/content/ad/adlist.jsp" />
+    </action>
+    
+    <action path="/adregister" 
+            name="managerForm" 
+    		type="action.Advertisement.ADRegisterAction">
+   		<forward name="ok" path="/adindex.do" />
+   		<forward name="error" path="/jsp/content/ad/adregister.jsp" />
+    </action>
+    
+    <action path="/adcreate" 
+   	         name="adForm"
+    		type="action.Advertisement.CreateADAction">
+   		<forward name="ok" path="/jsp/content/ad/adlist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/addelete" 
+    		type="action.Advertisement.DeleteADAction">
+   		<forward name="ok" path="/jsp/content/ad/adlist.jsp"  />
+   	 </action>
+   	 
+   	 <action path="/saleslist" 
+   	        name="adForm"
+    		type="action.Advertisement.SaleslistAction">
+   		<forward name="ok" path="/jsp/content/ad/salesreport.jsp"  />
+   	 </action>
+   	 
+   	  <action path="/sortsales" 
+   	        name="adForm"
+    		type="action.Advertisement.SortSalesAction">
+   		<forward name="ok" path="/jsp/content/ad/salesreport.jsp"  />
+   	 </action>
+  
+    
+     <action path="/customerlist" 
+    		type="action.Advertisement.CustomerlistAction">
+   		<forward name="ok" path="/jsp/content/ad/customerlist.jsp"  />
+   	 </action>
+    
+  </action-mappings>
+  <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+  <message-resources parameter="MessageResources"/>
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+    <set-property property="moduleAware" value="true"/>
+  </plug-in>
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+</struts-config>

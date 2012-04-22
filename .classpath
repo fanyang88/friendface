@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="WEB-INF/src" kind="src"/>
+	<classpathentry path="WEB-INF/lib/commons-beanutils.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/commons-collections.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/commons-digester.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/commons-fileupload.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/commons-logging.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/commons-validator.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/jakarta-oro.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/lib/struts.jar" kind="lib"/>
+	<classpathentry path="D:/tomcat/Tomcat 5.5/common/lib/jasper-runtime.jar" kind="lib"/>
+	<classpathentry path="D:/tomcat/Tomcat 5.5/common/lib/jsp-api.jar" kind="lib"/>
+	<classpathentry path="D:/tomcat/Tomcat 5.5/common/lib/servlet-api.jar" kind="lib"/>
+	<classpathentry path="D:/tomcat/Tomcat 5.5/common/lib/db2jcc.jar" kind="lib"/>
+	<classpathentry path="D:/eclipse/project2/FriendFace/WEB-INF/lib/db2java.jar" kind="lib"/>
+	<classpathentry path="D:/eclipse/project2/FriendFace/WEB-INF/lib/db2jcc_license_cu.jar" kind="lib"/>
+	<classpathentry path="WEB-INF/classes" kind="output"/>
+</classpath>
